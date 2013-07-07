@@ -54,12 +54,9 @@ $strs .= "---\n";
 $strs .= $post->post_content;
 
 createfile($path, $files, $strs);
-
 ?>
 <p><?php echo date('Y-n-j-', strtotime($post->post_date)) . $post->post_name ; ?> success</p>
 <?php
-
 }
-
 ?>
 all done!
