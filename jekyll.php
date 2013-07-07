@@ -6,7 +6,6 @@ $path = "../_posts"; //生成路径
 $ext = ".md"; //后缀
 $layout = "post"; //模板
 
-
 function createdir($path)
 {
    if(file_exists($path) && is_dir($path)){
@@ -21,7 +20,6 @@ function createfile($path, $file, $str)
   fputs($fp,$str);
   fclose($fp);
 }
-
 function wxr_post_taxonomy() {
     $post = get_post();
     $s = "";
