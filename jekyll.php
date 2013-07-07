@@ -43,10 +43,12 @@ $posts = $wpdb->get_results( "SELECT * FROM {$wpdb->posts} WHERE post_status ='p
 
 createdir($path);
 
+$strs = "";
+
 foreach ( $posts as $post ) {
 
 $files = date('Y-n-j-', strtotime($post->post_date)) . $post->post_name . $ext;
-$strs = "---\n";
+$strs .= "---\n";
 $strs .= "layout: ". $layout ."\n";
 $strs .= "title: ".$post->post_title ."\n";
 $strs .= wxr_post_taxonomy();
@@ -55,7 +57,7 @@ $strs .= $post->post_content;
 
 createfile($path, $files, $strs);
 ?>
-<p><?php echo date('Y-n-j-', strtotime($post->post_date)) . $post->post_name ; ?> success</p>
+<p><?php echo $files ; ?> success</p>
 <?php
 }
 ?>
