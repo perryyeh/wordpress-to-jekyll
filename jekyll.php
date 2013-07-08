@@ -2,7 +2,7 @@
 
 global $path, $files, $strs;
 
-$path = "../_posts"; //生成路径
+$path = "_posts"; //生成路径
 $ext = ".md"; //后缀
 $layout = "post"; //模板
 
@@ -34,7 +34,7 @@ function wxr_post_taxonomy() {
     return $s;
 }
 
-require('../wp-blog-header.php');
+require('./wp-blog-header.php');
 global $wpdb;
 
 $posts = $wpdb->get_results( "SELECT * FROM {$wpdb->posts} WHERE post_status ='publish' " );
